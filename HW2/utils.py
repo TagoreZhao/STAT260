@@ -42,3 +42,76 @@ def compute_left_singular_vectors(A):
     """Compute the left singular vectors (U_A) from the SVD of A."""
     U_A, _, _ = np.linalg.svd(A, full_matrices=False)
     return U_A
+
+def compute_sampling_probabilities(A, B, method="uniform"):
+    """
+    Compute a probability distribution p for sampling columns of A and rows of B.
+
+    Parameters:
+    A (numpy.ndarray): An (m x n) matrix.
+    B (numpy.ndarray): An (n x p) matrix.
+    method (str): The sampling method to use. Options:
+                  - "uniform": Uniform probabilities.
+                  - "norm_based": Probabilities based on ||A(:,i)|| * ||B(i,:)||
+                  - "frobenius_based": Probabilities based on ||A(:,i)||^2 / ||A||_F^2 when B = A^T
+
+    Returns:
+    p (numpy.ndarray): A probability distribution vector of length n.
+    """
+    n = A.shape[1]
+    
+    if method == "uniform":
+        # Uniform probabilities: each column/row is equally likely to be chosen
+        p = np.full(n, 1 / n)
+    
+    elif method == "norm_based":
+        # Compute column norms of A and row norms of B.
+        A_norms = np.linalg.norm(A, axis=0)  # shape: (n,)
+        B_norms = np.linalg.norm(B, axis=1)  # shape: (n,)
+        norm_product = A_norms * B_norms
+        p = norm_product / np.sum(norm_product)  # Normalize to sum to 1
+    
+    elif method == "frobenius_based":
+        # Assume B = A^T, so use ||A(:,i)||^2 / ||A||_F^2
+        A_norms_sq = np.linalg.norm(A, axis=0)**2  # Column-wise squared norms, shape: (n,)
+        p = A_norms_sq / np.sum(A_norms_sq)  # Normalize to sum to 1
+    
+    else:
+        raise ValueError("Invalid method. Choose from 'uniform', 'norm_based', or 'frobenius_based'.")
+
+    return p
+
+def basic_matrix_multiplication(A, B, c, p):
+    """
+    Implements Algorithm 3: Basic Matrix Multiplication.
+
+    Parameters:
+    A (numpy.ndarray): An (m x n) matrix.
+    B (numpy.ndarray): An (n x p) matrix.
+    c (int): The number of sampled columns/rows.
+    p (numpy.ndarray): A probability distribution over the n columns/rows.
+
+    Returns:
+    C (numpy.ndarray): A (m x c) matrix sampled from A.
+    R (numpy.ndarray): A (c x p) matrix sampled from B.
+    """
+    m, n = A.shape
+    n_, p_dim = B.shape
+    assert n == n_, "Matrix dimensions do not align for multiplication."
+    assert len(p) == n, "Probability distribution length must match number of columns in A (rows in B)."
+    assert np.isclose(np.sum(p), 1), "Probability distribution must sum to 1."
+
+    # Initialize C and R
+    C = np.zeros((m, c))
+    R = np.zeros((c, p_dim))
+
+    # Sampling process
+    for t in range(c):
+        # Sample index i_t according to probability p
+        it = np.random.choice(n, p=p)
+        
+        # Scale and assign the selected columns/rows
+        C[:, t] = A[:, it] / np.sqrt(c * p[it])
+        R[t, :] = B[it, :] / np.sqrt(c * p[it])
+
+    return C, R
