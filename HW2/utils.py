@@ -30,12 +30,15 @@ def compute_matrices(A):
     """Compute A^T A and U_A^T U_A using SVD and QR"""
     A_T_A = A.T @ A  # Compute A^T A
 
-    # SVD-based U_A
     U_A, _, _ = np.linalg.svd(A, full_matrices=False)
     U_A_T_U_A_svd = U_A.T @ U_A
 
-    # QR-based U_A
     Q, _ = np.linalg.qr(A)
     U_A_T_U_A_qr = Q.T @ Q
 
     return A_T_A, U_A_T_U_A_svd, U_A_T_U_A_qr
+
+def compute_left_singular_vectors(A):
+    """Compute the left singular vectors (U_A) from the SVD of A."""
+    U_A, _, _ = np.linalg.svd(A, full_matrices=False)
+    return U_A
