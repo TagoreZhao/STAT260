@@ -136,7 +136,7 @@ def basic_matrix_multiplication(A, B, c, p, seed=1234):
 def projection_matrix_multiplication(A, B, P):
     return A @ P, P.T @ B
 
-def compute_sample_approximation_errors(X, p, c_values, seed=1234):
+def compute_sample_approximation_errors(A,B, p, c_values, seed=1234):
     """
     For a given matrix X (to approximate X^T X), its sampling distribution p,
     and a list of sample sizes (c_values), compute the relative spectral and Frobenius errors.
@@ -147,12 +147,12 @@ def compute_sample_approximation_errors(X, p, c_values, seed=1234):
     """
     spectral_errors = []
     fro_errors = []
-    exact = X.T @ X
+    exact = A @ B
     norm_exact_spec = np.linalg.norm(exact, 2)
     norm_exact_fro = np.linalg.norm(exact, 'fro')
     
     for c in c_values:
-        C, R = basic_matrix_multiplication(X.T, X, c, seed=seed)
+        C, R = basic_matrix_multiplication(A, B, c,p, seed=seed)
         approx = C @ R
         err_spec = np.linalg.norm(approx - exact, 2) / norm_exact_spec
         err_fro = np.linalg.norm(approx - exact, 'fro') / norm_exact_fro
@@ -196,13 +196,15 @@ def plot_errors(c_values, spectral_errors, fro_errors, title):
     plt.grid(True)
     plt.show()
 
-def generate_random_projection_matrix(d, k, method="gaussian", seed=1234):
+def generate_random_projection_matrix(d, k, sparsity=0, method="gaussian", seed=1234):
     """
-    Generate a random projection matrix of size (d x k) with either scaled Gaussian or scaled ±1 entries.
-    
+    Generate a random projection matrix of size (d x k) with either scaled Gaussian or scaled ±1 entries,
+    with an option to zero out a fraction of the entries.
+
     Parameters:
       d (int): The number of rows (original dimension).
       k (int): The number of columns (projected dimension).
+      sparsity (float): Fraction of entries to zero out (between 0 and 1). 0 means fully dense.
       method (str): The type of random projection to use. Options are:
                     - "gaussian": Use scaled Gaussian entries.
                     - "sign": Use scaled {+1, -1} entries.
@@ -211,21 +213,25 @@ def generate_random_projection_matrix(d, k, method="gaussian", seed=1234):
     Returns:
       P (numpy.ndarray): A (d x k) projection matrix.
     """
-    rng = np.random.default_rng(seed)  # Create a random generator with the given seed
+    rng = np.random.default_rng(seed)
 
     if method == "gaussian":
-        # Generate a (d x k) matrix with standard normal entries, scaled by 1/sqrt(k)
         P = rng.standard_normal((d, k)) / np.sqrt(k)
     elif method == "sign":
-        # Generate a (d x k) matrix with entries randomly chosen from {+1, -1},
-        # scaled by 1/sqrt(k)
         P = rng.choice([1, -1], size=(d, k)) / np.sqrt(k)
     else:
         raise ValueError("Invalid method. Choose 'gaussian' or 'sign'.")
     
+    # Apply sparsity if requested
+    if sparsity > 0:
+        if not (0 <= sparsity < 1):
+            raise ValueError("sparsity must be between 0 and 1 (non-inclusive of 1).")
+        mask = rng.choice([0, 1], size=P.shape, p=[sparsity, 1 - sparsity])
+        P = (P * mask) / np.sqrt(1 - sparsity)
+    
     return P
 
-def compute_projection_approximation_errors(A,B, c_values,seed = 1234, method="gaussian"):
+def compute_projection_approximation_errors(A, B, c_values,seed = 1234, sparsity = 0, method="gaussian"):
     """
     For a given matrix X (to approximate X^T X), its sampling distribution p,
     and a list of sample sizes (c_values), compute the relative spectral and Frobenius errors.
@@ -240,7 +246,7 @@ def compute_projection_approximation_errors(A,B, c_values,seed = 1234, method="g
     norm_exact_spec = np.linalg.norm(exact, 2)
     norm_exact_fro = np.linalg.norm(exact, 'fro')
     for c in c_values:
-        P = generate_random_projection_matrix(A.shape[1], c, method=method, seed=seed)
+        P = generate_random_projection_matrix(A.shape[1], c, sparsity=sparsity, method=method, seed=seed)
         C, R = projection_matrix_multiplication(A, B, P)
         approx = C @ R
         err_spec = np.linalg.norm(approx - exact, 2) / norm_exact_spec
