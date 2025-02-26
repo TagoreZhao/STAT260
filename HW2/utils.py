@@ -46,28 +46,32 @@ def compute_left_singular_vectors(A):
 def compute_sampling_probabilities(A, B, method="uniform"):
     """
     Compute a probability distribution p for sampling columns of A and rows of B.
-
-    Parameters:
-    A (numpy.ndarray): An (m x n) matrix.
-    B (numpy.ndarray): An (n x p) matrix.
-    method (str): The sampling method to use. Options:
-                  - "uniform": Uniform probabilities.
-                  - "norm_based": Probabilities based on ||A(:,i)|| * ||B(i,:)||
-                  - "frobenius_based": Probabilities based on ||A(:,i)||^2 / ||A||_F^2 when B = A^T
-
-    Returns:
-    p (numpy.ndarray): A probability distribution vector of length n.
-    """
-    n = A.shape[1]
     
+    Parameters:
+      A (numpy.ndarray): An (m x n) matrix.
+      B (numpy.ndarray): An (n x p) matrix.
+      method (str): The sampling method to use. Options:
+                    - "uniform": Uniform probabilities.
+                    - "norm_based": Probabilities based on ||A(:,i)|| * ||B(i,:)||
+                    - "frobenius_based": Probabilities based on ||A(:,i)||^2 / ||A||_F^2 when B = A^T.
+                    - "leverage": Probabilities based on the leverage scores of A.
+                               (i.e., p_i = ||U(i,:)||^2 / (sum_j ||U(j,:)||^2),
+                                where U is the left singular vector matrix of A.)
+    
+    Returns:
+      p (numpy.ndarray): A probability distribution vector.
+         For "uniform", "norm_based", and "frobenius_based", the distribution is computed over columns (length = A.shape[1]).
+         For "leverage", the distribution is computed over rows of A (length = A.shape[0]).
+    """
     if method == "uniform":
-        # Uniform probabilities: each column/row is equally likely to be chosen
+        # Uniform probabilities: each column/row is equally likely to be chosen.
+        n = A.shape[1]
         p = np.full(n, 1 / n)
     
     elif method == "norm_based":
         # Compute column norms of A and row norms of B.
         A_norms = np.linalg.norm(A, axis=0)  # shape: (n,)
-        B_norms = np.linalg.norm(B, axis=1)  # shape: (n,)
+        B_norms = np.linalg.norm(B, axis=1)    # shape: (n,)
         norm_product = A_norms * B_norms
         p = norm_product / np.sum(norm_product)  # Normalize to sum to 1
     
@@ -76,42 +80,171 @@ def compute_sampling_probabilities(A, B, method="uniform"):
         A_norms_sq = np.linalg.norm(A, axis=0)**2  # Column-wise squared norms, shape: (n,)
         p = A_norms_sq / np.sum(A_norms_sq)  # Normalize to sum to 1
     
+    elif method == "leverage":
+        # Compute the left singular vectors U of A.
+        # U is of size (m x d), where m is the number of rows.
+        U, _, _ = np.linalg.svd(B, full_matrices=False)
+        # Compute the leverage scores for the rows of A:
+        leverage_scores = np.linalg.norm(U, axis=1)**2  # shape: (n,)
+        # Normalize to create a probability distribution:
+        p = leverage_scores / np.sum(leverage_scores)
+    
     else:
-        raise ValueError("Invalid method. Choose from 'uniform', 'norm_based', or 'frobenius_based'.")
-
+        raise ValueError("Invalid method. Choose from 'uniform', 'norm_based', 'frobenius_based', or 'leverage'.")
+    
     return p
 
-def basic_matrix_multiplication(A, B, c, p):
+def basic_matrix_multiplication(A, B, c, p, seed=1234):
     """
     Implements Algorithm 3: Basic Matrix Multiplication.
 
     Parameters:
-    A (numpy.ndarray): An (m x n) matrix.
-    B (numpy.ndarray): An (n x p) matrix.
-    c (int): The number of sampled columns/rows.
-    p (numpy.ndarray): A probability distribution over the n columns/rows.
+      A (numpy.ndarray): An (m x n) matrix.
+      B (numpy.ndarray): An (n x p) matrix.
+      c (int): The number of sampled columns/rows.
+      p (numpy.ndarray): A probability distribution over the n columns/rows.
+      seed (int): Random seed for reproducibility.
 
     Returns:
-    C (numpy.ndarray): A (m x c) matrix sampled from A.
-    R (numpy.ndarray): A (c x p) matrix sampled from B.
+      C (numpy.ndarray): A (m x c) matrix sampled from A.
+      R (numpy.ndarray): A (c x p) matrix sampled from B.
     """
     m, n = A.shape
-    n_, p_dim = B.shape
-    assert n == n_, "Matrix dimensions do not align for multiplication."
+    n_B, p_dim = B.shape
+    assert n == n_B, "Matrix dimensions do not align for multiplication."
     assert len(p) == n, "Probability distribution length must match number of columns in A (rows in B)."
     assert np.isclose(np.sum(p), 1), "Probability distribution must sum to 1."
 
     # Initialize C and R
     C = np.zeros((m, c))
     R = np.zeros((c, p_dim))
+    
+    # Create a random number generator using the given seed
+    rng = np.random.default_rng(seed)
 
     # Sampling process
     for t in range(c):
-        # Sample index i_t according to probability p
-        it = np.random.choice(n, p=p)
+        # Sample index i_t according to probability p using the generator
+        it = rng.choice(n, p=p)
         
         # Scale and assign the selected columns/rows
         C[:, t] = A[:, it] / np.sqrt(c * p[it])
         R[t, :] = B[it, :] / np.sqrt(c * p[it])
 
     return C, R
+
+def projection_matrix_multiplication(A, B, P):
+    return A @ P, P.T @ B
+
+def compute_sample_approximation_errors(X, p, c_values, seed=1234):
+    """
+    For a given matrix X (to approximate X^T X), its sampling distribution p,
+    and a list of sample sizes (c_values), compute the relative spectral and Frobenius errors.
+    
+    Returns:
+      spectral_errors: list of relative spectral norm errors.
+      fro_errors: list of relative Frobenius norm errors.
+    """
+    spectral_errors = []
+    fro_errors = []
+    exact = X.T @ X
+    norm_exact_spec = np.linalg.norm(exact, 2)
+    norm_exact_fro = np.linalg.norm(exact, 'fro')
+    
+    for c in c_values:
+        C, R = basic_matrix_multiplication(X.T, X, c, seed=seed)
+        approx = C @ R
+        err_spec = np.linalg.norm(approx - exact, 2) / norm_exact_spec
+        err_fro = np.linalg.norm(approx - exact, 'fro') / norm_exact_fro
+        spectral_errors.append(err_spec)
+        fro_errors.append(err_fro)
+    return spectral_errors, fro_errors
+
+def compute_leverage_scores_rows(U):
+    """
+    Given the left singular vectors U (m x d), compute the leverage scores for the rows.
+    Since U has orthonormal columns, sum_i ||U(i,:)||^2 = d.
+    Returns p as a probability vector of length m.
+    """
+    # Compute squared norms of rows of U.
+    lev_scores = np.sum(U**2, axis=1)
+    # Normalize: since sum_i lev_scores[i] == d, we have p_i = lev_scores[i] / d.
+    return lev_scores / np.sum(lev_scores)
+
+def plot_probability_distribution(p, title):
+    """
+    Plot a bar chart for the probability distribution p.
+    """
+    plt.figure(figsize=(6, 4))
+    plt.bar(np.arange(len(p)), p)
+    plt.xlabel("Index")
+    plt.ylabel("Probability")
+    plt.title(title)
+    plt.show()
+
+def plot_errors(c_values, spectral_errors, fro_errors, title):
+    """
+    Plot the relative spectral and Frobenius norm errors versus the number of samples.
+    """
+    plt.figure(figsize=(8, 5))
+    plt.plot(c_values, spectral_errors, marker='o', label="Spectral Error")
+    plt.plot(c_values, fro_errors, marker='s', label="Frobenius Error")
+    plt.xlabel("Number of Samples (c)")
+    plt.ylabel("Relative Error")
+    plt.title(title)
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+def generate_random_projection_matrix(d, k, method="gaussian", seed=1234):
+    """
+    Generate a random projection matrix of size (d x k) with either scaled Gaussian or scaled ±1 entries.
+    
+    Parameters:
+      d (int): The number of rows (original dimension).
+      k (int): The number of columns (projected dimension).
+      method (str): The type of random projection to use. Options are:
+                    - "gaussian": Use scaled Gaussian entries.
+                    - "sign": Use scaled {+1, -1} entries.
+      seed (int): Seed for reproducibility.
+                    
+    Returns:
+      P (numpy.ndarray): A (d x k) projection matrix.
+    """
+    rng = np.random.default_rng(seed)  # Create a random generator with the given seed
+
+    if method == "gaussian":
+        # Generate a (d x k) matrix with standard normal entries, scaled by 1/sqrt(k)
+        P = rng.standard_normal((d, k)) / np.sqrt(k)
+    elif method == "sign":
+        # Generate a (d x k) matrix with entries randomly chosen from {+1, -1},
+        # scaled by 1/sqrt(k)
+        P = rng.choice([1, -1], size=(d, k)) / np.sqrt(k)
+    else:
+        raise ValueError("Invalid method. Choose 'gaussian' or 'sign'.")
+    
+    return P
+
+def compute_projection_approximation_errors(A,B, c_values,seed = 1234, method="gaussian"):
+    """
+    For a given matrix X (to approximate X^T X), its sampling distribution p,
+    and a list of sample sizes (c_values), compute the relative spectral and Frobenius errors.
+    
+    Returns:
+      spectral_errors: list of relative spectral norm errors.
+      fro_errors: list of relative Frobenius norm errors.
+    """
+    spectral_errors = []
+    fro_errors = []
+    exact = A @ B
+    norm_exact_spec = np.linalg.norm(exact, 2)
+    norm_exact_fro = np.linalg.norm(exact, 'fro')
+    for c in c_values:
+        P = generate_random_projection_matrix(A.shape[1], c, method=method, seed=seed)
+        C, R = projection_matrix_multiplication(A, B, P)
+        approx = C @ R
+        err_spec = np.linalg.norm(approx - exact, 2) / norm_exact_spec
+        err_fro = np.linalg.norm(approx - exact, 'fro') / norm_exact_fro
+        spectral_errors.append(err_spec)
+        fro_errors.append(err_fro)
+    return spectral_errors, fro_errors
