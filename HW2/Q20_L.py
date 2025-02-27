@@ -12,7 +12,7 @@ from utils import (generate_gaussian_A,
 # ----------------------------
 # Parameters
 # ----------------------------
-d = 50                                  # fixed number of columns
+d = 500                                  # fixed number of columns
 n_list = list(range(2*d, 100*d+1, d))   # n from 2d to 100d, in steps of d
 num_trials = 5                          # number of trials for averaging timings
 oversampling_parameter = 0.5            # relative oversampling: r = oversampling_parameter * n
@@ -55,7 +55,7 @@ for n in n_list:
         r = int(oversampling_parameter * n)
         # Generate a random projection matrix P of size (n x r) with {±1} entries.
         # (Note: Adjust the arguments if your function expects (orig_dim, proj_dim) in a different order.)
-        P = generate_random_projection_matrix(n, r, sparsity=sparsity, method=proj_method, seed=trial_seed)
+        P = generate_random_projection_matrix(r, n, sparsity=sparsity, method=proj_method, seed=trial_seed)
         start = time.time()
         x_rproj = least_squares_projection(A, b, P)
         t_rproj.append(time.time() - start)

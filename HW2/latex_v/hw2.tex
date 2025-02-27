@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{xcolor} % for custom colors
+\usepackage{listings}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{red},
+  commentstyle=\color{green!50!black},
+  numbers=left,
+  numberstyle=\tiny,
+  stepnumber=1,
+  numbersep=10pt,
+  backgroundcolor=\color{gray!10},
+  frame=single,
+  breaklines=true,
+  captionpos=b,
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false
+}
+
+\geometry{a4paper, margin=1in}
+
+\title{Homework 2}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+We will now start reflecting on the coding questions of Homework 2. The code base that can be used to replicate the result can be found
+in the following link: \texttt{https://github.com/TagoreZhao/STAT260/tree/main/HW2}
+
+\section{Problem 6, 7, and 8}
+
+The code needed for generating these three matrices is given below:
+
+\begin{lstlisting}[caption={Python code for generating matrices}]
+import numpy as np
+
+def generate_covariance_matrix(d):
+    indices = np.arange(d)
+    Sigma = 2 * 0.5 ** np.abs(indices[:, None] - indices[None, :])
+    return Sigma
+
+def generate_gaussian_A(n, d, seed=1234):
+    rng = np.random.default_rng(seed)
+    Sigma = generate_covariance_matrix(d)
+    mean = np.ones(d)
+    A = rng.multivariate_normal(mean, Sigma, size=n)
+    return A
+
+def generate_t_distribution_A(n, d, df, seed=1234):
+    rng = np.random.default_rng(seed)
+    Sigma = generate_covariance_matrix(d)
+    mean = np.ones(d)
+    z = rng.multivariate_normal(mean, Sigma, size=n)
+    chi2_samples = rng.chisquare(df, size=(n, 1))
+    A = z / np.sqrt(chi2_samples / df)
+    return A
+\end{lstlisting}
+Since numpy does not provide built in functions for generating t-distributed random variables, we have to generate the random variables
+ourselves. The Gaussian random variables are generated using the \texttt{multivariate\_normal}
+function, while the t-distributed random variables are generated using the formula $A = Z / \sqrt{\chi^2 / df}$, where $Z$ is the Gaussian
+random variable, $\chi^2$ is the chi-squared random variable, and $df$ is the degrees of freedom.
+
+\section*{Problem 9}
+We 
+
+
+% \section*{Problem 2}
+% Here is an example of a graph:
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.5\textwidth]{example-graph.png}
+%     \caption{Example Graph}
+%     \label{fig:example-graph}
+% \end{figure}
+
+\end{document}
