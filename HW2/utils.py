@@ -26,6 +26,7 @@ def generate_t_distribution_A(n, d, df, seed=1234):
     A = z / np.sqrt(chi2_samples / df)  # Convert to t-distribution samples
     return A
 
+
 def compute_matrices(A):
     """Compute A^T A and U_A^T U_A using SVD and QR"""
     A_T_A = A.T @ A  # Compute A^T A
@@ -64,12 +65,10 @@ def compute_sampling_probabilities(A, B, method="uniform"):
          For "leverage", the distribution is computed over rows of A (length = A.shape[0]).
     """
     if method == "uniform":
-        # Uniform probabilities: each column/row is equally likely to be chosen.
         n = A.shape[1]
         p = np.full(n, 1 / n)
     
     elif method == "norm_based":
-        # Compute column norms of A and row norms of B.
         A_norms = np.linalg.norm(A, axis=0)  # shape: (n,)
         B_norms = np.linalg.norm(B, axis=1)    # shape: (n,)
         norm_product = A_norms * B_norms
@@ -78,15 +77,12 @@ def compute_sampling_probabilities(A, B, method="uniform"):
     elif method == "frobenius_based":
         # Assume B = A^T, so use ||A(:,i)||^2 / ||A||_F^2
         A_norms_sq = np.linalg.norm(A, axis=0)**2  # Column-wise squared norms, shape: (n,)
-        p = A_norms_sq / np.sum(A_norms_sq)  # Normalize to sum to 1
+        p = A_norms_sq / np.sum(A_norms_sq) 
     
     elif method == "leverage":
-        # Compute the left singular vectors U of A.
         # U is of size (m x d), where m is the number of rows.
         U, _, _ = np.linalg.svd(B, full_matrices=False)
-        # Compute the leverage scores for the rows of A:
         leverage_scores = np.linalg.norm(U, axis=1)**2  # shape: (n,)
-        # Normalize to create a probability distribution:
         p = leverage_scores / np.sum(leverage_scores)
     
     else:
@@ -115,19 +111,13 @@ def basic_matrix_multiplication(A, B, c, p, seed=1234):
     assert len(p) == n, "Probability distribution length must match number of columns in A (rows in B)."
     assert np.isclose(np.sum(p), 1), "Probability distribution must sum to 1."
 
-    # Initialize C and R
     C = np.zeros((m, c))
     R = np.zeros((c, p_dim))
     
-    # Create a random number generator using the given seed
     rng = np.random.default_rng(seed)
-
-    # Sampling process
     for t in range(c):
-        # Sample index i_t according to probability p using the generator
         it = rng.choice(n, p=p)
-        
-        # Scale and assign the selected columns/rows
+
         C[:, t] = A[:, it] / np.sqrt(c * p[it])
         R[t, :] = B[it, :] / np.sqrt(c * p[it])
 
@@ -166,9 +156,7 @@ def compute_leverage_scores_rows(U):
     Since U has orthonormal columns, sum_i ||U(i,:)||^2 = d.
     Returns p as a probability vector of length m.
     """
-    # Compute squared norms of rows of U.
     lev_scores = np.sum(U**2, axis=1)
-    # Normalize: since sum_i lev_scores[i] == d, we have p_i = lev_scores[i] / d.
     return lev_scores / np.sum(lev_scores)
 
 def plot_probability_distribution(p, title):
@@ -221,8 +209,7 @@ def generate_random_projection_matrix(d, k, sparsity=0, method="gaussian", seed=
         P = rng.choice([1, -1], size=(d, k)) / np.sqrt(k)
     else:
         raise ValueError("Invalid method. Choose 'gaussian' or 'sign'.")
-    
-    # Apply sparsity if requested
+
     if sparsity > 0:
         if not (0 <= sparsity < 1):
             raise ValueError("sparsity must be between 0 and 1 (non-inclusive of 1).")
@@ -268,12 +255,9 @@ def run_sample_trials(matrix_generator, matrix_params, c_values, num_trials, sam
     fro_errors = np.zeros((num_trials, len(c_values)))
     
     for t in range(num_trials):
-        trial_seed = seed + t  # Vary seed for independent samples.
+        trial_seed = seed + t  
         A = matrix_generator(**matrix_params, seed=trial_seed)
-        # Compute sampling probabilities using the specified method.
-        # We approximate A^T A, so we pass A.T and A.
         p = compute_sampling_probabilities(A.T, A, method=sampling_method)
-        # Compute the errors for this trial.
         spec_err, fro_err = compute_sample_approximation_errors(A.T, A, p, c_values)
         spec_errors[t, :] = spec_err
         fro_errors[t, :] = fro_err
@@ -292,7 +276,7 @@ def run_projection_trials(matrix_generator, matrix_params, c_values, num_trials,
     fro_errors = np.zeros((num_trials, len(c_values)))
     
     for t in range(num_trials):
-        trial_seed = seed + t  # Vary seed for independent samples.
+        trial_seed = seed + t
         A = matrix_generator(**matrix_params, seed=trial_seed)
         spec_err, fro_err = compute_projection_approximation_errors(A.T, A, c_values, seed=trial_seed,sparsity=p_sparsity, method=projection_method)
         spec_errors[t, :] = spec_err
