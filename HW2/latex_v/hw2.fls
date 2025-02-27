@@ -47,6 +47,14 @@ INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/float/float.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/float/float.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/listings/listings.sty
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/listings/listings.sty
 INPUT /home/tagore/.TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
@@ -139,10 +147,26 @@ INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samp
 INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
 INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
 INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png
 INPUT hw2.aux
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

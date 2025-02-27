@@ -3,6 +3,9 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{xcolor} % for custom colors
+\usepackage{float}       % for [H] placement
+\usepackage{caption}     % for better caption control
+\usepackage{subcaption} 
 \usepackage{listings}
 
 \lstset{
@@ -71,72 +74,115 @@ ourselves. The Gaussian random variables are generated using the \texttt{multiva
 function, while the t-distributed random variables are generated using the formula $A = Z / \sqrt{\chi^2 / df}$, where $Z$ is the Gaussian
 random variable, $\chi^2$ is the chi-squared random variable, and $df$ is the degrees of freedom.
 \newpage
+
+
 \section*{Problem 9}
+
 We will first plot the norm based probability distribution for all three matrices that we generated using seed 1234.
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png}
     \caption{GA Norm based probability distribution}
     \label{fig:GA_norm_based_prob}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png}
     \caption{T3 Norm based probability distribution}
     \label{fig:T3_norm_based_prob}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png}
     \caption{T1 Norm based probability distribution}
     \label{fig:T1_norm_based_prob}
 \end{figure}
 
-We will now plot the frobenius and spectral error for all appoximations of the three matrices multiplication.
-\begin{figure}
+We will now plot the Frobenius and spectral error for the approximations of the three matrix multiplications.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png}
-    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_GA\textasciicircum T * A\_GA)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Norm Based Sampling Approximation for (\(A_{GA}^\top A_{GA}\))}
+    \label{fig:GA_norm_based_error}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png}
-    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_T3\textasciicircum T * A\_T3)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Norm Based Sampling Approximation for (\(A_{T3}^\top A_{T3}\))}
+    \label{fig:T3s_norm_based_error}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png}
-    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_T1\textasciicircum T * A\_T1)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Norm Based Sampling Approximation for (\(A_{T1}^\top A_{T1}\))}
+    \label{fig:T1_norm_based_error}
 \end{figure}
 
 \newpage
+
 \section*{Problem 10}
-We will now plot the frobenius and spectral error for all appoximations of the three left singular matrices multiplication.
-\begin{figure}
+
+We will now plot the Frobenius and spectral error for the approximations of the three left singular matrices multiplication.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png}
-    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_GA\textasciicircum T * U\_GA)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Uniform Based Sampling Approximation for (\(U_{GA}^\top U_{GA}\))}
+    \label{fig:GA_uniform_based_error}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png}
-    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_T3\textasciicircum T * U\_T3)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Uniform Based Sampling Approximation for (\(U_{T3}^\top U_{T3}\))}
+    \label{fig:T1_uniform_based_error}
 \end{figure}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png}
-    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_T1\textasciicircum T * U\_T1)}
-    \label{fig:T1_norm_based_prob}
+    \caption{Error of Uniform Based Sampling Approximation for (\(U_{T1}^\top U_{T1}\))}
+    \label{fig:T3_uniform_based_error}
 \end{figure}
 
 \newpage
+
 \section*{Problem 11}
-We will now plot the frobenius and spectral error for all appoximations of $A^\top A$ using leverage score sampling.
+
+We will now plot the Frobenius and spectral error for the approximations of \(A^\top A\) using leverage score sampling.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_GA (A_GA * A_GA^T).png}
+    \caption{Error of Leverage Based Sampling Approximation for (\(A_{GA}^\top A_{GA}\))}
+    \label{fig:GA_leverage_based_error}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png}
+    \caption{Error of Leverage Based Sampling Approximation for (\(A_{T3}^\top A_{T3}\))}
+    \label{fig:T1_leverage_based_error}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q11_Leverage Sampling: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png}
+    \caption{Error of Leverage Based Sampling Approximation for (\(A_{T1}^\top A_{T1}\))}
+    \label{fig:T3_leverage_based_error}
+\end{figure}
+
+The results looks similar for $A_{GA}$ and $A_{T3}$, but the error for $A_{T1}$ is significantly higher than the other two matrices. 
+This means that the leverage score sampling is not as effective for $A_{T1}$ as it is for the other two matrices.
+
+
+\section*{Problem 12}
 
 % \section*{Problem 2}
 % Here is an example of a graph:
