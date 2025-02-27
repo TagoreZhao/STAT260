@@ -279,6 +279,26 @@ def run_sample_trials(matrix_generator, matrix_params, c_values, num_trials, sam
         fro_errors[t, :] = fro_err
     return spec_errors, fro_errors
 
+def run_projection_trials(matrix_generator, matrix_params, c_values, num_trials, projection_method,p_sparsity = 0, seed=1234):
+    """
+    Generate num_trials independent matrices using matrix_generator(**matrix_params)
+    and compute the approximation errors for each using the sampling probabilities given by sampling_method.
+    
+    Returns:
+      spec_errors: an array of shape (num_trials, len(c_values)) with spectral errors.
+      fro_errors: an array of shape (num_trials, len(c_values)) with Frobenius errors.
+    """
+    spec_errors = np.zeros((num_trials, len(c_values)))
+    fro_errors = np.zeros((num_trials, len(c_values)))
+    
+    for t in range(num_trials):
+        trial_seed = seed + t  # Vary seed for independent samples.
+        A = matrix_generator(**matrix_params, seed=trial_seed)
+        spec_err, fro_err = compute_projection_approximation_errors(A.T, A, c_values, seed=trial_seed,sparsity=p_sparsity, method=projection_method)
+        spec_errors[t, :] = spec_err
+        fro_errors[t, :] = fro_err
+    return spec_errors, fro_errors
+
 def compute_mean_std(errors):
     return errors.mean(axis=0), errors.std(axis=0)
 
@@ -292,3 +312,4 @@ def plot_error_with_variability(c_values, mean_err, std_err, ylabel, title, colo
     plt.legend()
     plt.grid(True)
     plt.show()
+
