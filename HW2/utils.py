@@ -254,3 +254,41 @@ def compute_projection_approximation_errors(A, B, c_values,seed = 1234, sparsity
         spectral_errors.append(err_spec)
         fro_errors.append(err_fro)
     return spectral_errors, fro_errors
+
+def run_sample_trials(matrix_generator, matrix_params, c_values, num_trials, sampling_method, seed=1234):
+    """
+    Generate num_trials independent matrices using matrix_generator(**matrix_params)
+    and compute the approximation errors for each using the sampling probabilities given by sampling_method.
+    
+    Returns:
+      spec_errors: an array of shape (num_trials, len(c_values)) with spectral errors.
+      fro_errors: an array of shape (num_trials, len(c_values)) with Frobenius errors.
+    """
+    spec_errors = np.zeros((num_trials, len(c_values)))
+    fro_errors = np.zeros((num_trials, len(c_values)))
+    
+    for t in range(num_trials):
+        trial_seed = seed + t  # Vary seed for independent samples.
+        A = matrix_generator(**matrix_params, seed=trial_seed)
+        # Compute sampling probabilities using the specified method.
+        # We approximate A^T A, so we pass A.T and A.
+        p = compute_sampling_probabilities(A.T, A, method=sampling_method)
+        # Compute the errors for this trial.
+        spec_err, fro_err = compute_sample_approximation_errors(A.T, A, p, c_values)
+        spec_errors[t, :] = spec_err
+        fro_errors[t, :] = fro_err
+    return spec_errors, fro_errors
+
+def compute_mean_std(errors):
+    return errors.mean(axis=0), errors.std(axis=0)
+
+def plot_error_with_variability(c_values, mean_err, std_err, ylabel, title, color):
+    plt.figure(figsize=(8,6))
+    plt.plot(c_values, mean_err, color=color, label='Mean error')
+    plt.fill_between(c_values, mean_err - std_err, mean_err + std_err, color=color, alpha=0.3, label='±1 Std')
+    plt.xlabel('Number of Samples (c)')
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.legend()
+    plt.grid(True)
+    plt.show()
