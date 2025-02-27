@@ -13,8 +13,8 @@ from utils import (generate_gaussian_A,
 # Parameters
 # ----------------------------
 d = 500                                  # fixed number of columns
-n_list = list(range(2*d, 100*d+1, d))   # n from 2d to 100d, in steps of d
-num_trials = 5                          # number of trials for averaging timings
+n_list = list(range(2*d, 50*d+1, d))   # n from 2d to 100d, in steps of d
+num_trials = 1                          # number of trials for averaging timings
 oversampling_parameter = 0.5            # relative oversampling: r = oversampling_parameter * n
 proj_method = 'sign'                    # using {±1} projection matrix
 sparsity = 0                            # dense projection matrix (sparsity=0)
