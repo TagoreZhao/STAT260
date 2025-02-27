@@ -184,6 +184,99 @@ This means that the leverage score sampling is not as effective for $A_{T1}$ as 
 
 \section*{Problem 12}
 
+We will now plot the Frobenius and spectral error for the approximations of \(A A^\top\) using gaussian projection and $\{\pm 1\}$ projection.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Gaussian Projection: Error vs. Samples for A_GA (A_GA * A_GA^T).png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{GA} A_{GA}^\top\))}
+    \label{fig:GA_gaussian_projection_error}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Gaussian Projection: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{T3} A_{T3}^\top\))}
+    \label{fig:T3_gaussian_projection_error}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Gaussian Projection: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
+    \label{fig:T1_gaussian_projection_error}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Sign Projection: Error vs. Samples for A_GA (A_GA * A_GA^T).png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{GA} A_{GA}^\top\))}
+    \label{fig:GA_pm1_projection_error}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Sign Projection: Error vs. Samples for A_T3 (A_T3 * A_T3^T).png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{T3} A_{T3}^\top\))}
+    \label{fig:T3_pm1_projection_error}
+\end{figure}\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q12_Sign Projection: Error vs. Samples for A_T1 (A_T1 * A_T1^T).png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
+    \label{fig:T1_pm1_projection_error}
+\end{figure}
+
+Comparing the results of the Gaussian projection and $\{\pm 1\}$ projection: The gaussian projection produces more stable results and has slightly smaller error for projecting $A_{GA}$ and $A_{T3}$ when there is reasonbale amount of dimensions. 
+The guassian projection performs extremelly well for $A_{T1}$, while the $\{\pm 1\}$ projection has a higher error for all three matrices. The only extreme case is that sign projection seems to outperform gaussian projection for $A_{T1}$ when the number of dimensions is small.
+
+Comparing the results of projection and sampling: The projection method has much lower error compare to uniform sampling and overall slight lower error when comparing to norm based sampling and leverage score sampling. The projection method is more stable and has lower error for all three matrices.
+However, there are times where the projection method shows outlier errors, such as the gaussian projection for $A_{GA}$ when the number of dimensions is small.
+
+\section*{Problem 13}
+
+We will now plot 3D plot of the error of the sparse approximations of \(A A^\top\) using gaussian projection and $\{\pm 1\}$ projection. The two axes are the sparsity and the number of dimensions, and the third axis is the error.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_GA_gaussian_errors.png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{GA} A_{GA}^\top\))}
+    \label{fig:GA_gaussian_projection_error_3d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_GA_sign_errors.png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{GA} A_{GA}^\top\))}
+    \label{fig:GA_pm1_projection_error_3d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_T3_gaussian_errors.png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{T3} A_{T3}^\top\))}
+    \label{fig:T3_gaussian_projection_error_3d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_T3_sign_errors.png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{T3} A_{T3}^\top\))}
+    \label{fig:T3_pm1_projection_error_3d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_T1_gaussian_errors.png}
+    \caption{Error of Gaussian Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
+    \label{fig:T1_gaussian_projection_error_3d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_T1_sign_errors.png}
+    \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
+    \label{fig:T1_pm1_projection_error_3d}
+\end{figure}
 
 
 % \section*{Problem 2}
