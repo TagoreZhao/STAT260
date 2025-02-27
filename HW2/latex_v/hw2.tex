@@ -70,10 +70,73 @@ Since numpy does not provide built in functions for generating t-distributed ran
 ourselves. The Gaussian random variables are generated using the \texttt{multivariate\_normal}
 function, while the t-distributed random variables are generated using the formula $A = Z / \sqrt{\chi^2 / df}$, where $Z$ is the Gaussian
 random variable, $\chi^2$ is the chi-squared random variable, and $df$ is the degrees of freedom.
-
+\newpage
 \section*{Problem 9}
-We 
+We will first plot the norm based probability distribution for all three matrices that we generated using seed 1234.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png}
+    \caption{GA Norm based probability distribution}
+    \label{fig:GA_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png}
+    \caption{T3 Norm based probability distribution}
+    \label{fig:T3_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png}
+    \caption{T1 Norm based probability distribution}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
 
+We will now plot the frobenius and spectral error for all appoximations of the three matrices multiplication.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png}
+    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_GA\textasciicircum T * A\_GA)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png}
+    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_T3\textasciicircum T * A\_T3)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png}
+    \caption{Q9 Error of Norm Based Sampling Approximation for (A\_T1\textasciicircum T * A\_T1)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+
+\newpage
+\section*{Problem 10}
+We will now plot the frobenius and spectral error for all appoximations of the three left singular matrices multiplication.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png}
+    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_GA\textasciicircum T * U\_GA)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png}
+    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_T3\textasciicircum T * U\_T3)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png}
+    \caption{Q10 Error of Norm Based Sampling Approximation for (U\_T1\textasciicircum T * U\_T1)}
+    \label{fig:T1_norm_based_prob}
+\end{figure}
+
+\newpage
+\section*{Problem 11}
+We will now plot the frobenius and spectral error for all appoximations of $A^\top A$ using leverage score sampling.
 
 % \section*{Problem 2}
 % Here is an example of a graph:

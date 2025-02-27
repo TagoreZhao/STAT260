@@ -94,6 +94,51 @@ INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.t
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 OUTPUT hw2.pdf
 INPUT /home/tagore/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_GA norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T3 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_A_T1 norm_based Sampling Probabilities.png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_GA * A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q9_Error of Norm Based Sampling Approximation for (A_T3 * A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q_9_Error of Norm Based Sampling Approximation for (A_T1 * A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_GA (U_A_GA * U_A_GA^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T3 (U_A_T3 * U_A_T3^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
+INPUT /home/tagore/repos/STAT260/HW2/assets/Q10_Uniform Sampling: Error vs. Samples for U_A_T1 (U_A_T1 * U_A_T1^T).png
 INPUT hw2.aux
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
@@ -103,5 +148,6 @@ INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 INPUT /home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb
