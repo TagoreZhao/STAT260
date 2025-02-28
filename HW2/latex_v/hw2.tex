@@ -565,13 +565,199 @@ For each matrix, the following figures show the LS error versus the number of sa
     \label{fig:T3_comparison}
 \end{figure}
 
-% \section*{Problem 2}
-% Here is an example of a graph:
-% \begin{figure}[h!]
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{example-graph.png}
-%     \caption{Example Graph}
-%     \label{fig:example-graph}
-% \end{figure}
+\section*{Problem 18}
+
+
+For each matrix, the figures below compare the LS error versus the number of samples \(r\) using two projection methods: Gaussian and Sign. The top row corresponds to Regime 1 (r = d ... 2d) and the bottom row to Regime 2 (r = 2d, 3d, \(\ldots\)).
+
+\subsection*{\(A_{GA}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 1}
+        \label{fig:GA_gaussian_regime1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 1}
+        \label{fig:GA_sign_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 2}
+        \label{fig:GA_gaussian_regime2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 2}
+        \label{fig:GA_sign_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{GA}\): Projection LS Error vs. \(r\) for Gaussian and Sign methods}
+    \label{fig:GA_projection_comparison}
+\end{figure}
+
+\newpage
+
+\subsection*{\(A_{T1}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 1}
+        \label{fig:T1_gaussian_regime1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 1}
+        \label{fig:T1_sign_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 2}
+        \label{fig:T1_gaussian_regime2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 2}
+        \label{fig:T1_sign_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{T1}\): Projection LS Error vs. \(r\) for Gaussian and Sign methods}
+    \label{fig:T1_projection_comparison}
+\end{figure}
+
+\newpage
+
+\subsection*{\(A_{T3}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 1}
+        \label{fig:T3_gaussian_regime1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 1}
+        \label{fig:T3_sign_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2: Gaussian and Sign
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Gaussian, Regime 2}
+        \label{fig:T3_gaussian_regime2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png}
+        \caption{Sign, Regime 2}
+        \label{fig:T3_sign_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{T3}\): Projection LS Error vs. \(r\) for Gaussian and Sign methods}
+    \label{fig:T3_projection_comparison}
+\end{figure}
+\section*{Problem 19}
+In this problem, we compare the projection LS error for different projection methods on three matrices. For each matrix, the figures below display the results using Gaussian projection and Sign projection.
+
+\subsection*{\(A_{GA}\)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png}
+        \caption{Gaussian Projection}
+        \label{fig:Q19_AGA_gaussian}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png}
+        \caption{Sign Projection}
+        \label{fig:Q19_AGA_sign}
+    \end{subfigure}
+    \caption{\(A_{GA}\): Projection LS Error Comparison}
+    \label{fig:Q19_AGA}
+\end{figure}
+
+\newpage
+\subsection*{\(A_{T1}\)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png}
+        \caption{Gaussian Projection}
+        \label{fig:Q19_AT1_gaussian}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png}
+        \caption{Sign Projection}
+        \label{fig:Q19_AT1_sign}
+    \end{subfigure}
+    \caption{\(A_{T1}\): Projection LS Error Comparison}
+    \label{fig:Q19_AT1}
+\end{figure}
+
+\newpage
+\subsection*{\(A_{T3}\)}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png}
+        \caption{Gaussian Projection}
+        \label{fig:Q19_AT3_gaussian}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png}
+        \caption{Sign Projection}
+        \label{fig:Q19_AT3_sign}
+    \end{subfigure}
+    \caption{\(A_{T3}\): Projection LS Error Comparison}
+    \label{fig:Q19_AT3}
+\end{figure}
+
+
 
 \end{document}

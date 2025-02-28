@@ -4,21 +4,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D 
 import time
+import os
 from utils import (generate_gaussian_A, 
                    generate_random_projection_matrix, 
                    least_squares_projection,
                    )
 
-# ----------------------------
-# Parameters
-# ----------------------------
 d = 500                                  # fixed number of columns
-n_list = list(range(2*d, 50*d+1, d))   # n from 2d to 100d, in steps of d
-num_trials = 1                          # number of trials for averaging timings
-oversampling_parameter = 0.5            # relative oversampling: r = oversampling_parameter * n
-proj_method = 'sign'                    # using {±1} projection matrix
-sparsity = 0                            # dense projection matrix (sparsity=0)
+n_list = list(range(2*d, 50*d+1, d))       # n from 2d to 50d, in steps of d
+num_trials = 1                           # number of trials for averaging timings
+oversampling_parameter = 0.5             # relative oversampling: r = oversampling_parameter * n
+proj_method = 'sign'                     # using {±1} projection matrix
+sparsity = 0                             # dense projection matrix (sparsity=0)
 seed = 1234
+
+# Output directory for saving plots
+output_dir = "/home/tagore/repos/STAT260/HW2/assets"
+os.makedirs(output_dir, exist_ok=True)
 
 # ----------------------------
 # Running time and error comparisons
@@ -53,11 +55,15 @@ for n in n_list:
         # 1. Random Projection LS method:
         # Set r = oversampling_parameter * n (as integer)
         r = int(oversampling_parameter * n)
-        # Generate a random projection matrix P of size (n x r) with {±1} entries.
-        # (Note: Adjust the arguments if your function expects (orig_dim, proj_dim) in a different order.)
+        # Generate a random projection matrix P of size (r x n) with {±1} entries.
+        # (Assuming generate_random_projection_matrix returns a matrix of shape (r, n))
         P = generate_random_projection_matrix(r, n, sparsity=sparsity, method=proj_method, seed=trial_seed)
+        # Use projection to speed up LS: compute projected matrix and vector
+        PA = P @ A    # shape: (r, d)
+        Pb = P @ b    # shape: (r,)
         start = time.time()
-        x_rproj = least_squares_projection(A, b, P)
+        # Solve the LS problem on the projected system
+        x_rproj = np.linalg.lstsq(PA, Pb, rcond=None)[0]
         t_rproj.append(time.time() - start)
         e_rproj.append(np.linalg.norm(x_rproj - x_true) / np.linalg.norm(x_true))
         
@@ -91,10 +97,10 @@ plt.plot(n_list, time_qr, marker='s', label="QR")
 plt.plot(n_list, time_svd, marker='^', label="SVD")
 plt.xlabel("Number of rows n")
 plt.ylabel("Average Running Time (seconds)")
-plt.title("Running Time Comparison vs. n (d = {})".format(d))
+plt.title("Q20_Running Time Comparison vs. n (d = {})".format(d))
 plt.legend()
 plt.grid(True)
-plt.savefig("running_time_comparison.png")
+plt.savefig(os.path.join(output_dir, "running_time_comparison.png"), dpi=300, bbox_inches='tight')
 plt.close()
 
 # ----------------------------
@@ -106,8 +112,8 @@ plt.plot(n_list, err_qr, marker='s', label="QR")
 plt.plot(n_list, err_svd, marker='^', label="SVD")
 plt.xlabel("Number of rows n")
 plt.ylabel("Average Relative LS Solution Error")
-plt.title("LS Error Comparison vs. n (d = {})".format(d))
+plt.title("Q20_LS Error Comparison vs. n (d = {})".format(d))
 plt.legend()
 plt.grid(True)
-plt.savefig("ls_error_comparison.png")
+plt.savefig(os.path.join(output_dir, "ls_error_comparison.png"), dpi=300, bbox_inches='tight')
 plt.close()

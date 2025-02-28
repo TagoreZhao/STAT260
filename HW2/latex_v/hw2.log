@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.15)  27 FEB 2025 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.15)  27 FEB 2025 21:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -593,9 +593,115 @@ File: /home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_v
 <use /home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_vs_r.png>
 Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_vs_r.png  used on input line 559.
 (pdftex.def)             Requested size: 144.95303pt x 108.70909pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png, id=170, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png  used on input line 580.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png, id=171, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png  used on input line 587.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png, id=172, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png  used on input line 597.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png, id=173, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png  used on input line 604.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
 
 
-[16 </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime2_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime2_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_vs_r.png>] (./hw2.aux)
+[16 </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime1_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime2_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime2_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_vs_r.png>]
+
+[17 </home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_gaussian_regime2_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_GA_sign_regime2_Projection_LS_Error_vs_r.png>]
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png, id=190, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png  used on input line 622.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png, id=191, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png  used on input line 629.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png, id=192, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png  used on input line 639.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png, id=193, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png  used on input line 646.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+
+
+[18 </home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_gaussian_regime2_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T1_sign_regime2_Projection_LS_Error_vs_r.png>]
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png, id=201, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png  used on input line 664.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png, id=202, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png  used on input line 671.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png, id=203, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png  used on input line 681.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png, id=204, 578.16pt x 433.62pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png  used on input line 688.
+(pdftex.def)             Requested size: 217.42265pt x 163.06363pt.
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png, id=205, 499.1448pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png  used on input line 704.
+(pdftex.def)             Requested size: 217.42265pt x 185.31345pt.
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png, id=206, 505.6491pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png  used on input line 711.
+(pdftex.def)             Requested size: 217.42265pt x 182.93106pt.
+
+
+[19 </home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime1_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_gaussian_regime2_Projection_LS_Error_vs_r.png> </home/tagore/repos/STAT260/HW2/assets/Q18_A_T3_sign_regime2_Projection_LS_Error_vs_r.png>]
+
+[20 </home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_gaussian_projection_LS_error.png> </home/tagore/repos/STAT260/HW2/assets/Q19_A_GA_sign_projection_LS_error.png>]
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png, id=220, 499.1448pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png  used on input line 725.
+(pdftex.def)             Requested size: 217.42265pt x 185.31345pt.
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png, id=221, 499.1448pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png  used on input line 732.
+(pdftex.def)             Requested size: 217.42265pt x 185.31345pt.
+
+
+[21 </home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_gaussian_projection_LS_error.png> </home/tagore/repos/STAT260/HW2/assets/Q19_A_T1_sign_projection_LS_error.png>]
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png, id=227, 505.6491pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png  used on input line 746.
+(pdftex.def)             Requested size: 217.42265pt x 182.93106pt.
+</home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png, id=228, 499.1448pt x 425.4294pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png  used on input line 753.
+(pdftex.def)             Requested size: 217.42265pt x 185.31345pt.
+
+
+[22 </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png> </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png>] (./hw2.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -606,18 +712,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6562 strings out of 475172
- 131651 string characters out of 5765957
+ 6730 strings out of 475172
+ 144302 string characters out of 5765957
  832931 words of memory out of 5000000
- 29532 multiletter control sequences out of 15000+600000
+ 29700 multiletter control sequences out of 15000+600000
  564546 words of font info for 57 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  57i,8n,65p,367b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on hw2.pdf (16 pages, 3000023 bytes).
+Output written on hw2.pdf (22 pages, 5660381 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
+ 306 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 361 words of extra memory for PDF output out of 10000 (max. 10000000)
 
