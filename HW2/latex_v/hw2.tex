@@ -407,8 +407,163 @@ For both projection, the errors are higher when the sparsity is high, and the er
 \end{figure}
 
 
+\section*{Problem 17}
 
+For each matrix, the following figures show the LS error versus the number of samples \(r\) using three sampling methods. The top row corresponds to Regime 1 (r = d ... 2d) and the bottom row to Regime 2 (r = 2d, 3d, \(\ldots\)).
 
+\subsection*{\(A_{GA}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_uniform_regime1_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 1}
+        \label{fig:GA_uniform_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_norm_based_regime1_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 1}
+        \label{fig:GA_norm_based_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_leverage_regime1_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 1}
+        \label{fig:GA_leverage_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_uniform_regime2_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 2}
+        \label{fig:GA_uniform_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_norm_based_regime2_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 2}
+        \label{fig:GA_norm_based_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_GA_leverage_regime2_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 2}
+        \label{fig:GA_leverage_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{GA}\): LS Error vs. r for Different Sampling Methods and Regimes}
+    \label{fig:GA_comparison}
+\end{figure}
+
+\newpage
+
+\subsection*{\(A_{T1}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_uniform_regime1_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 1}
+        \label{fig:T1_uniform_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_norm_based_regime1_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 1}
+        \label{fig:T1_norm_based_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_leverage_regime1_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 1}
+        \label{fig:T1_leverage_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_uniform_regime2_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 2}
+        \label{fig:T1_uniform_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_norm_based_regime2_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 2}
+        \label{fig:T1_norm_based_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T1_leverage_regime2_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 2}
+        \label{fig:T1_leverage_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{T1}\): LS Error vs. r for Different Sampling Methods and Regimes}
+    \label{fig:T1_comparison}
+\end{figure}
+
+\newpage
+
+\subsection*{\(A_{T3}\)}
+
+\begin{figure}[H]
+    \centering
+    % Regime 1
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime1_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 1}
+        \label{fig:T3_uniform_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime1_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 1}
+        \label{fig:T3_norm_based_regime1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime1_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 1}
+        \label{fig:T3_leverage_regime1}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Regime 2
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_uniform_regime2_LS_Error_vs_r.png}
+        \caption{Uniform, Regime 2}
+        \label{fig:T3_uniform_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_norm_based_regime2_LS_Error_vs_r.png}
+        \caption{Norm-based, Regime 2}
+        \label{fig:T3_norm_based_regime2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q17_A_T3_leverage_regime2_LS_Error_vs_r.png}
+        \caption{Leverage, Regime 2}
+        \label{fig:T3_leverage_regime2}
+    \end{subfigure}
+    
+    \caption{\(A_{T3}\): LS Error vs. r for Different Sampling Methods and Regimes}
+    \label{fig:T3_comparison}
+\end{figure}
 
 % \section*{Problem 2}
 % Here is an example of a graph:
