@@ -759,5 +759,21 @@ In this problem, we compare the projection LS error for different projection met
 \end{figure}
 
 
+\section*{Problem 20: LS Error and Running Time Comparison}
 
+Figure~\ref{fig:running_time} shows the running time of the LS problem solved by three methods:
+\begin{itemize}
+    \item \textbf{Random Projection LS:} Uses a dense random projection (with entries $\pm1$) to reduce the size of the problem before solving it.
+    \item \textbf{QR-based LS:} Solves the full problem by computing a QR decomposition.
+    \item \textbf{SVD-based LS:} Solves the full problem via singular value decomposition.
+\end{itemize}
+
+For smaller problem sizes (i.e., smaller $n$), the overhead of generating and applying a dense random projection matrix (since we are not using a fast Hadamard-based transform) makes the random projection method comparable or even slightly slower than the highly optimized QR and SVD routines. However, for larger problems, reducing the dimension from $n$ to $r$ (with $r\ll n$) significantly reduces the computational burden of solving the LS problem, and the random projection method becomes slightly faster and can handle larger problems than QR or SVD.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png}
+    \caption{Running Time Comparison of LS Methods for $d=500$. For small $n$, the overhead of random projection leads to comparable running times, while for large $n$, the projection method becomes slightly faster than QR or SVD.}
+    \label{fig:running_time}
+\end{figure}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.15)  27 FEB 2025 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.15)  27 FEB 2025 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,9 +699,16 @@ File: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.pn
 <use /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png>
 Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png  used on input line 753.
 (pdftex.def)             Requested size: 217.42265pt x 185.31345pt.
+</home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png, id=229, 617.9085pt x 394.5942pt>
+File: /home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png Graphic file (type png)
+<use /home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png>
+Package pdftex.def Info: /home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png  used on input line 775.
+(pdftex.def)             Requested size: 362.37569pt x 231.41167pt.
 
 
-[22 </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png> </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png>] (./hw2.aux)
+[22 </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_gaussian_projection_LS_error.png> </home/tagore/repos/STAT260/HW2/assets/Q19_A_T3_sign_projection_LS_error.png>]
+
+[23 </home/tagore/repos/STAT260/HW2/assets/Q20_running_time_comparison.png>] (./hw2.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -712,18 +719,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6730 strings out of 475172
- 144302 string characters out of 5765957
+ 6745 strings out of 475172
+ 144966 string characters out of 5765957
  832931 words of memory out of 5000000
- 29700 multiletter control sequences out of 15000+600000
- 564546 words of font info for 57 fonts, out of 8000000 for 9000
+ 29713 multiletter control sequences out of 15000+600000
+ 565189 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,8n,65p,367b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on hw2.pdf (22 pages, 5660381 bytes).
+ 57i,8n,65p,624b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/tagore/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/tagore/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on hw2.pdf (23 pages, 6021829 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 321 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
