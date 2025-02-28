@@ -406,7 +406,7 @@ def run_ls_projection_trials(A, b, x_true, r_values, projection_method,sparsity 
 def compute_mean_std(errors):
     return errors.mean(axis=0), errors.std(axis=0)
 
-def plot_error_with_variability(c_values, mean_err, std_err, ylabel, title, color):
+def plot_error_with_variability(c_values, mean_err, std_err, ylabel, title, color, save_path=None):
     plt.figure(figsize=(8,6))
     plt.plot(c_values, mean_err, color=color, label='Mean error')
     plt.fill_between(c_values, mean_err - std_err, mean_err + std_err, color=color, alpha=0.3, label='±1 Std')
@@ -415,5 +415,8 @@ def plot_error_with_variability(c_values, mean_err, std_err, ylabel, title, colo
     plt.title(title)
     plt.legend()
     plt.grid(True)
+    if save_path is not None:
+        plt.savefig(save_path)
     plt.show()
+    plt.close()
 

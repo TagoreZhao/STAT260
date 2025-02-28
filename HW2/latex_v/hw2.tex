@@ -270,13 +270,144 @@ We will now plot 3D plot of the error of the sparse approximations of \(A A^\top
     \caption{Error of Gaussian Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
     \label{fig:T1_gaussian_projection_error_3d}
 \end{figure}
-
+ 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q_13_A_T1_sign_errors.png}
     \caption{Error of $\{\pm 1\}$ Projection Approximation for (\(A_{T1} A_{T1}^\top\))}
     \label{fig:T1_pm1_projection_error_3d}
 \end{figure}
+
+Both Gaussian projection and $\{\pm 1\}$ projection have similar error patterns for all three matrices. For $A_{GA}$ and $A_{T3}$, the error is relatively stable and low when the number of dimensions is large. 
+In addition, both projection seems to perform well as we increase sparsity. However, for $A_{T1}$, the error is significantly higher than the other two matrices, and the error is not as stable as the other two matrices.
+For both projection, the errors are higher when the sparsity is high, and the errors are more unstable when the sparsity is high.
+
+
+\section*{Problem 13.5 Variability Analysis}
+\subsection*{\(A_{GA}\)}
+
+\begin{figure}[H]
+    \centering
+    % Frobenius Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_GA_frobenius_error.png}
+        \caption{Sampling: Frobenius Error}
+        \label{fig:GA_fs}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_GA_projection_frobenius_error.png}
+        \caption{Projection: Frobenius Error}
+        \label{fig:GA_fp}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Spectral Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_GA_spectral_error.png}
+        \caption{Sampling: Spectral Error}
+        \label{fig:GA_ss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_GA_projection_spectral_error.png}
+        \caption{Projection: Spectral Error}
+        \label{fig:GA_sp}
+    \end{subfigure}
+    
+    \caption{\(A_{GA}\): Comparison of Random Sampling and Random Projection}
+    \label{fig:GA_comparison}
+\end{figure}
+
+\newpage
+\subsection*{\(A_{T1}\)}
+
+\begin{figure}[H]
+    \centering
+    % Frobenius Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T1_frobenius_error.png}
+        \caption{Sampling: Frobenius Error}
+        \label{fig:T1_fs}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T1_projection_frobenius_error.png}
+        \caption{Projection: Frobenius Error}
+        \label{fig:T1_fp}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Spectral Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T1_spectral_error.png}
+        \caption{Sampling: Spectral Error}
+        \label{fig:T1_ss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T1_projection_spectral_error.png}
+        \caption{Projection: Spectral Error}
+        \label{fig:T1_sp}
+    \end{subfigure}
+    
+    \caption{\(A_{T1}\): Comparison of Random Sampling and Random Projection}
+    \label{fig:T1_comparison}
+\end{figure}
+
+\newpage
+\subsection*{\(A_{T3}\)}
+
+\begin{figure}[H]
+    \centering
+    % Frobenius Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T3_frobenius_error.png}
+        \caption{Sampling: Frobenius Error}
+        \label{fig:T3_fs}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T3_projection_frobenius_error.png}
+        \caption{Projection: Frobenius Error}
+        \label{fig:T3_fp}
+    \end{subfigure}
+    
+    \vspace{0.5cm}
+    
+    % Spectral Error Comparison
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T3_spectral_error.png}
+        \caption{Sampling: Spectral Error}
+        \label{fig:T3_ss}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{/home/tagore/repos/STAT260/HW2/assets/Q13.5_A_T3_projection_spectral_error.png}
+        \caption{Projection: Spectral Error}
+        \label{fig:T3_sp}
+    \end{subfigure}
+    
+    \caption{\(A_{T3}\): Comparison of Random Sampling and Random Projection}
+    \label{fig:T3_comparison}
+\end{figure}
+
+
+
 
 
 % \section*{Problem 2}
